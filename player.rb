@@ -1,9 +1,8 @@
 class Player
-  attr_reader :name
+  attr_reader :name, :token
 
-  def initialize
-    print 'Please enter your name: '
-    @name = gets.chomp
-    @token = 'X'
+  def initialize(name, token)
+    @name = name
+    @token = token
   end
 end
