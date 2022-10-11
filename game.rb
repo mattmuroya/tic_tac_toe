@@ -24,13 +24,16 @@ class Game
       get_move
       @number_of_plays += 1
       redraw
-      if win? || @number_of_plays == 9
+      if win?
+        puts "#{@current_player.name wins!}"
+        break
+      elsif @number_of_plays == 9
+        puts "It's a tie!"
         break
       else
         switch_current_player
       end
     end
-    puts !win? ? "It's a tie!" : "#{@current_player.name} wins!"
   end
 
   def get_move
